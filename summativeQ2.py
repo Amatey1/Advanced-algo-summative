@@ -15,8 +15,8 @@ def grader (grades):
         else:
             nextval =(grades[i] - (grades[i]%5))+5
             diff =  nextval - grades[i]   
-            # next we check to see if the difference is <3 and add the differnce
-            # to the value or leave the value as is if the differen is <=3.
+            # next we check to see if the difference is less than 3 and add the differnce
+            # to the value or leave the value as is if the differen is greater than or equal to 3.
             if diff > 3 :
                 newlist.append(grades[i])
             else:

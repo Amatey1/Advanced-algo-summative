@@ -4,12 +4,13 @@ def summer(n):
 #intializing the total variable 
  total = 0
 
-# loop through each value and add the value to the variable "total".
+# this loop goes through each value between 0 and the "n" adding the value of the index it is currently on to the "total" variable.
+#The code stops once it reaches n and returns the sum.
  for x in range(n+1):
      total=total+x
- print(total)
+ return total
 
-summer(10)
-summer(10000)
-summer(1000000)
-summer(100000000)
+print (summer(10))
+print (summer(10000))
+print (summer(1000000))
+print (summer(100000000))

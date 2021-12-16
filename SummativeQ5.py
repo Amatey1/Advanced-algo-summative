@@ -40,26 +40,26 @@ def dijkstra(graph, s_vertex):
                         pq.put((n, k))
                         D_algo[k] = n
     return D_algo
- 
-def shortestReach(n_node, g_edges, s_node):
+   
+def shortestPath(total_node, all_edges, begin_node):
     # initialize empty list
     g_list = []
     
     # number of nodes in the graph
-    graph = Graph(n_node)
-    r = len(g_edges)
+    graph = Graph(total_node)
+    r = len(all_edges)
     # looping through the edges 
     for j in range(r):
-        c = g_edges[j][0]
-        d= g_edges[j][1]
-        e= g_edges[j][2]
+        c = all_edges[j][0]
+        d= all_edges[j][1]
+        e= all_edges[j][2]
         graph.a_edge(c, d, e) 
         #  djikistra function taking in the number of nodes and starting nodes
-    Djkt = dijkstra(graph, s_node)  
+    Djkt = dijkstra(graph, begin_node)  
     t = len(Djkt)
     # looping 
     for i in range(t):
-        if i != s_node:
+        if i != begin_node:
             g_list.append(Djkt[i])
     mylist = []
     for k in g_list:
@@ -69,4 +69,4 @@ def shortestReach(n_node, g_edges, s_node):
             mylist.append(k) 
 
     return mylist
-print(shortestReach(4, [[1,2,24], [1,3,3], [1,4,20], [3,4,12]], 1))
+print(shortestPath(4, [[1,2,24], [1,3,3], [1,4,20], [3,4,12]], 1))   
